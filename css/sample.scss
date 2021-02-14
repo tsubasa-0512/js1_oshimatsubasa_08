@@ -1,0 +1,157 @@
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: black; 
+    color: white;  
+
+}
+
+a {
+    text-decoration: none;
+}
+
+
+main {
+    margin: 50px auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.select-character {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+    
+    & .character-info {
+        margin: 0 30px;
+        
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.battle {
+    display: flex;
+    justify-content: center;
+    & .player, .enemy {
+        margin: 0 auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        & img {
+            width: 250px;
+            margin: 0 auto;
+        }
+        
+        & h2 {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            margin: 5px auto;
+        }
+        
+        & .hp-gauge {
+            width: 200px;
+            border: 1px solid gray;
+            margin: 5px auto;
+            
+            & .hp-gauge-value {
+                height: 15px;
+                width: 100%;   
+                background-color: teal;
+                transition: 0.3s;
+
+                &.red {
+                    background-color: red;
+                }
+            }
+        }
+        
+        & .player-hp, .enemy-hp {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            
+            &>div:first-of-type::after {
+                content: "/";
+                margin: 0 5px;
+            }
+            
+            & p {
+                display: inline-block;
+                margin: 0 10px;
+            }
+        }
+        
+        .enemy-hp {
+            margin-bottom: 50px;
+        }
+
+        & form {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+
+            & select {
+                width: 100px;
+                height: 30px;
+                margin: 0 5px;
+                align-items: center;
+                background-color: #3366CC;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 18px;
+                outline: none;
+                cursor: pointer;
+            }
+
+            & .do-attack {
+                width: 100px;
+                height: 30px;
+                margin: 0 10px;
+                align-items:center;
+                background-color:#FF570D;
+                color: white;
+                border-radius: 5px;
+                border: 0;
+                outline: none;
+                font-size: 18px;
+                cursor: pointer;
+                
+                &:hover {
+                    transform: scale(1.1, 1.1);
+                }
+                
+                &.deactive {
+                    pointer-events: none;
+                    opacity: 0.5;
+                }
+            }
+        }
+        }
+        
+}
+
+.logs {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    line-height: 1.8;
+    height: 250px;
+    width: 80%;
+    margin: 0 auto;
+    overflow: auto;
+    margin-top: 30px;
+    & li {
+        list-style: none;
+    }
+}

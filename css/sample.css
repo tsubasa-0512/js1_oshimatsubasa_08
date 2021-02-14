@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  margin: 50px auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.select-character {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 80px;
+}
+
+.select-character .character-info {
+  margin: 0 30px;
+}
+
+.select-character .character-info:hover {
+  cursor: pointer;
+}
+
+.battle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.battle .player, .battle .enemy {
+  margin: 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.battle .player img, .battle .enemy img {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.battle .player h2, .battle .enemy h2 {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin: 5px auto;
+}
+
+.battle .player .hp-gauge, .battle .enemy .hp-gauge {
+  width: 200px;
+  border: 1px solid gray;
+  margin: 5px auto;
+}
+
+.battle .player .hp-gauge .hp-gauge-value, .battle .enemy .hp-gauge .hp-gauge-value {
+  height: 15px;
+  width: 100%;
+  background-color: teal;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.battle .player .hp-gauge .hp-gauge-value.red, .battle .enemy .hp-gauge .hp-gauge-value.red {
+  background-color: red;
+}
+
+.battle .player .player-hp, .battle .player .enemy-hp, .battle .enemy .player-hp, .battle .enemy .enemy-hp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.battle .player .player-hp > div:first-of-type::after, .battle .player .enemy-hp > div:first-of-type::after, .battle .enemy .player-hp > div:first-of-type::after, .battle .enemy .enemy-hp > div:first-of-type::after {
+  content: "/";
+  margin: 0 5px;
+}
+
+.battle .player .player-hp p, .battle .player .enemy-hp p, .battle .enemy .player-hp p, .battle .enemy .enemy-hp p {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.battle .player .enemy-hp, .battle .enemy .enemy-hp {
+  margin-bottom: 50px;
+}
+
+.battle .player form, .battle .enemy form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px;
+}
+
+.battle .player form select, .battle .enemy form select {
+  width: 100px;
+  height: 30px;
+  margin: 0 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3366CC;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+}
+
+.battle .player form .do-attack, .battle .enemy form .do-attack {
+  width: 100px;
+  height: 30px;
+  margin: 0 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #FF570D;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.battle .player form .do-attack:hover, .battle .enemy form .do-attack:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+.battle .player form .do-attack.deactive, .battle .enemy form .do-attack.deactive {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.logs {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  line-height: 1.8;
+  height: 250px;
+  width: 80%;
+  margin: 0 auto;
+  overflow: auto;
+  margin-top: 30px;
+}
+
+.logs li {
+  list-style: none;
+}
+/*# sourceMappingURL=sample.css.map */
