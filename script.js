@@ -7,46 +7,46 @@ let logIndex = 0;
 const player = {
         name: 'ランスロット（あなた）',
         img: 'img/char1-battle.png',
-        hp: 50,
+        hp: 100,
         at: 40,
         df: 20
     }
 
 const char = [
     {
-        name: 'ランスロット',
-        img: 'img/char1-battle.png',
-        hp: 50,
-        at: 40,
-        df: 20
+        name: 'マガツ',
+        img: 'img/char6-battle.png',
+        hp: 200,
+        at: 100,
+        df: 30
     },
     {
         name: 'シルフェ',
         img: 'img/char2-battle.png',
-        hp: 100,
-        at: 40,
+        hp: 60,
+        at: 20,
         df: 20
     },
     {
         name: 'アヌビス',
         img: 'img/char3-battle.png',
-        hp: 200,
-        at: 40,
-        df: 20
+        hp: 100,
+        at: 70,
+        df: 30
     },
     {
         name: 'メジェド',
         img: 'img/char4-battle.png',
         hp: 1,
-        at: 200,
-        df: 20
+        at: 500,
+        df: 0
     },
     {
         name: 'エルルーン',
         img: 'img/char5-battle.png',
-        hp: 200,
-        at: 40,
-        df: 20
+        hp: 150,
+        at: 20,
+        df: 30
     }
 ]
 
@@ -79,6 +79,11 @@ document.querySelector('#Attack4').textContent =  char[3].at;
 document.querySelector('#charaname5').textContent = char[4].name;
 document.querySelector('#HP5').textContent = char[4].hp;
 document.querySelector('#Attack5').textContent =  char[4].at;
+
+// 対戦相手の変更
+document.querySelector('#select-next-character').addEventListener('click', function() {
+    window.location.reload();
+})
 
 // テキスト・画像挿入関数
 function insertText(id, text) {
@@ -117,7 +122,7 @@ insertImage('#player-img', player.img);
 insertText('#player-max-hp', player.hp);
 insertText('#current-player-hp', player.hp);
 // 敵キャラ
-let enemy = char[Math.floor(Math.random() * 5)];
+let enemy = char[Math.floor(Math.random() * char.length)];
 insertText('#enemy-name', enemy.name);
 insertImage('#enemy-img', enemy.img);
 insertText('#enemy-max-hp', enemy.hp);
@@ -195,7 +200,7 @@ document.querySelector('#do-attack').addEventListener('click', function() {
             document.querySelector('#current-player-gauge').classList.add('red');
         }
     }
-
+    
     // 勝敗がついた場合の処理
     if(enemy.hp <= 0 ){
         endGame = true;

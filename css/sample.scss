@@ -4,11 +4,18 @@ body{
     box-sizing: border-box;
     background-color: black; 
     color: white;  
-
 }
 
 a {
     text-decoration: none;
+}
+
+header {
+    text-align: center;
+        & .header-text {
+            font-size: 20px;
+        }
+        
 }
 
 
@@ -32,10 +39,40 @@ main {
         }
     }
 }
+.select-character {
+    margin: 0 auto;
+    & .select-next-character {
+        width: 200px;
+        height: 30px;
+        margin: 20px auto;
+        align-items:center;
+        background-color:#FF570D;
+        color: white;
+        border-radius: 5px;
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        cursor: pointer;
+        
+        &:hover {
+            transform: scale(1.1, 1.1);
+        }
+    
+    }
+}
 
 .battle {
     display: flex;
     justify-content: center;
+
+    & .vs{
+        font-size: 36px;
+        font-style: italic;
+        text-shadow: -2px -2px 3px white; 
+        display: flex;
+        align-items: center;      
+    }
+
     & .player, .enemy {
         margin: 0 auto;
         flex: 1;
