@@ -157,7 +157,7 @@ document.querySelector('#do-attack').addEventListener('click', function() {
         result = true;
     }else if(myTactics === 2 && cpuTactics === 1){
         result = true;
-    }else if(myTactics === 2 && cpuTactics === 1) {
+    }else if(myTactics === cpuTactics) {
         insertLog(player.name + 'は' + myHand + '。' + enemy.name + 'は' + cpuHand + '。相殺した！' )
     }else {
         result = false;
