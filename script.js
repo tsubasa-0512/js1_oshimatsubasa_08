@@ -80,10 +80,13 @@ document.querySelector('#charaname5').textContent = char[4].name;
 document.querySelector('#HP5').textContent = char[4].hp;
 document.querySelector('#Attack5').textContent =  char[4].at;
 
-// 対戦相手の変更
-document.querySelector('#select-next-character').addEventListener('click', function() {
-    window.location.reload();
-})
+// キャラクター選択
+function selectCharacter(char) {
+    insertText('#enemy-name', char.name);
+    insertImage('#enemy-img', char.img);
+    insertText('#enemy-max-hp', char.hp);
+    insertText('#current-enemy-hp', char.hp);
+}
 
 // テキスト・画像挿入関数
 function insertText(id, text) {
@@ -121,14 +124,32 @@ insertText('#player-name', player.name);
 insertImage('#player-img', player.img);
 insertText('#player-max-hp', player.hp);
 insertText('#current-player-hp', player.hp);
+
 // 敵キャラ
-let enemy = char[Math.floor(Math.random() * char.length)];
-insertText('#enemy-name', enemy.name);
-insertImage('#enemy-img', enemy.img);
-insertText('#enemy-max-hp', enemy.hp);
-insertText('#current-enemy-hp', enemy.hp);
+let enemy = char[0];
+selectCharacter(enemy);
 
-
+document.querySelector('#select1').addEventListener('click',function(){
+    enemy = char[0];
+    selectCharacter(enemy);
+  })
+document.querySelector('#select2').addEventListener('click',function(){
+    enemy = char[1];
+    selectCharacter(enemy);
+  })
+document.querySelector('#select3').addEventListener('click',function(){
+    enemy = char[2];
+    selectCharacter(enemy);
+  })
+document.querySelector('#select4').addEventListener('click',function(){
+    enemy = char[3];
+    selectCharacter(enemy);
+  })
+document.querySelector('#select5').addEventListener('click',function(){
+    enemy = char[4];
+    selectCharacter(enemy);
+  })
+  
 // 戦闘
 // じゃんけんでif切替する部分
 document.querySelector('#do-attack').addEventListener('click', function() {

@@ -33,31 +33,24 @@ main {
     
     & .character-info {
         margin: 0 30px;
-        
-        &:hover{
+
+        & button {
+            width: 80px;
+            height: 30px;
+            margin: 0 30px;
+            align-items:center;
+            background-color:#FF570D;
+            color: white;
+            border-radius: 5px;
+            border: 0;
+            outline: none;
+            font-size: 18px;
             cursor: pointer;
+            
+            &:hover {
+                transform: scale(1.1, 1.1);
+            }
         }
-    }
-}
-.select-character {
-    margin: 0 auto;
-    & .select-next-character {
-        width: 200px;
-        height: 30px;
-        margin: 20px auto;
-        align-items:center;
-        background-color:#FF570D;
-        color: white;
-        border-radius: 5px;
-        border: 0;
-        outline: none;
-        font-size: 18px;
-        cursor: pointer;
-        
-        &:hover {
-            transform: scale(1.1, 1.1);
-        }
-    
     }
 }
 

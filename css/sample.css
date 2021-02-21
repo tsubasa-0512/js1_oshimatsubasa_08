@@ -40,18 +40,10 @@ main {
   margin: 0 30px;
 }
 
-.select-character .character-info:hover {
-  cursor: pointer;
-}
-
-.select-character {
-  margin: 0 auto;
-}
-
-.select-character .select-next-character {
-  width: 200px;
+.select-character .character-info button {
+  width: 80px;
   height: 30px;
-  margin: 20px auto;
+  margin: 0 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -64,7 +56,7 @@ main {
   cursor: pointer;
 }
 
-.select-character .select-next-character:hover {
+.select-character .character-info button:hover {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
 }
